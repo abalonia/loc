@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>About Us</title>
+  <title>Animated 3D Globe (WebGL/three.js)</title>
  
 </head>
 
@@ -53,9 +53,9 @@ body {
   color: #FFFFFF;
   overflow-x: hidden;
   background: #000000;
-  background: -moz-linear-gradient(-45deg, #000000 0%, #302f2f 50%, #000000 100%);
-  background: linear-gradient(135deg, #000000 0%, #302f2f 50%, #000000 100%);
-  background: -webkit-linear-gradient(-45deg, #000000 0%, #302f2f 50%, #000000 100%);
+  background: -moz-linear-gradient(-45deg, #000000 0%, #000000 50%, #000000 100%);
+  background: linear-gradient(135deg, #000000 0%, #000000 50%, #000000 100%);
+  background: -webkit-linear-gradient(-45deg, #0000000%, #000000 50%, #000000 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='${colourEnd}', GradientType=1);
 }
 
@@ -272,7 +272,7 @@ var props = {
 	startingCountry: 'istanbul', // The key of the country to rotate the camera to during the introduction animation (and which country to start the cycle at)
 	colours: {
 		// Cache the colours
-		globeDots: 'rgb(61, 137, 164)', // No need to use the Three constructor as this value is used for the HTML canvas drawing 'fillStyle' property
+		globeDots: 'rgb(0, 188, 255)', // No need to use the Three constructor as this value is used for the HTML canvas drawing 'fillStyle' property
 		lines: new THREE.Color('#18FFFF'),
 		lineDots: new THREE.Color('#18FFFF')
 	},
@@ -1151,7 +1151,7 @@ function returnCurveCoordinates(latitudeA, longitudeA, latitudeB, longitudeB) {
 	multipleVal += Math.pow(midPointY, 2);
 	multipleVal += Math.pow(midPointZ, 2);
 	multipleVal = Math.pow(distance, 2) / multipleVal;
-	multipleVal = multipleVal * 0.7;
+	multipleVal = multipleVal * 0.3;
 
 	// Apply the vector length to get new mid-points
 	var midX = midPointX + multipleVal * midPointX;
